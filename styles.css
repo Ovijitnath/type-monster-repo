@@ -172,6 +172,11 @@ button {
   margin-bottom: 30px;
 }
 
+#blogPage {
+  background-color: rgb(228, 227, 249);
+
+}
+
 #modal-background {
   background: rgb(255, 255, 255);
   background: linear-gradient(92.49deg,
