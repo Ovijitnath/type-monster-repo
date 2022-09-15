@@ -22,6 +22,7 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
+  e.key = '' ? e.preventDefault() : '';
 
   // Handle backspace press
   if (newLetter == "Backspace") {
@@ -47,7 +48,6 @@ const typeController = (e) => {
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
     errorCount = errorCount + 1;
-    console.log(errorCount);
   }
 
   // check if given question text is equal to user typed text
@@ -134,7 +134,5 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = parseInt((currentTime - startTime) / 1000);
-
-
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
